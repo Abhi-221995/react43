@@ -11,7 +11,7 @@ const App = () => {
         <h1>🛍️ React Cart with Context API</h1>
         <div>
           <div>
-            <ProductList />
+            <ProductList  />
           </div>
           <div>
             <Cart />

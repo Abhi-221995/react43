@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { CartContext } from "./CartContext";
 
 const Product = ({ product }) => {
-  const { addToCart } =  useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
+
+  
 
   return (
     <div
