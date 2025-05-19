@@ -1,4 +1,3 @@
-// import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
@@ -9,9 +8,6 @@ import { useState } from "react";
 
 const App = () => {
   const [search, setSearch] = useState("");
-  // console.log(search);
-
-  
 
   return (
     <>
@@ -60,9 +56,4 @@ const App = () => {
 
 export default App;
 
-//  <tr>
-//                 <td>Vaishnavi</td>
-//                 <td>Karanam</td>
-//                 <td>290984080</td>
-//                 <td>vaishnavi@gmail.com</td>
-//               </tr>
+
