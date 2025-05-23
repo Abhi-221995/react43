@@ -5,10 +5,11 @@ function App() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
-  function onSubmit(data) {
+  async function onSubmit(data) {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     console.log("form submitted", data);
   }
 
@@ -32,7 +33,9 @@ function App() {
                 },
               })}
             />
-            {errors.firstName && <p className="error-msg">{errors.firstName.message}</p>}
+            {errors.firstName && (
+              <p className="error-msg">{errors.firstName.message}</p>
+            )}
           </div>
           <div>
             <label>Middle Name :</label>
@@ -44,7 +47,9 @@ function App() {
                 maxLength: 7,
               })}
             />
-            {errors.middleName && <p className="error-msg">Min Length should atleast be 3</p>}
+            {errors.middleName && (
+              <p className="error-msg">Min Length should atleast be 3</p>
+            )}
           </div>
           <div>
             <label>Last Name :</label>
@@ -60,16 +65,19 @@ function App() {
                 },
               })}
             />
-            {errors.lastName && <p className="error-msg">{errors.lastName.message}</p>}
+            {errors.lastName && (
+              <p className="error-msg">{errors.lastName.message}</p>
+            )}
           </div>
 
-          <input type="submit" />
+          <input
+            type="submit"
+            disabled={isSubmitting}
+            value={isSubmitting ? "Submitting" : "Submit"}
+          />
         </form>
 
-
-        {
-          
-        }
+        {}
       </div>
     </>
   );
