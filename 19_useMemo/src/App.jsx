@@ -1,12 +1,12 @@
 import "./App.css";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Child from "./Child";
 
 function App() {
   const [add, setAdd] = useState(0);
   const [minus, setMinus] = useState(100);
 
-  const expensiveCal = useMemo(() => {
+  const expensiveCal = useCallback(() => {
     console.log("expensiveCal");
     let result = 0;
     for (let i = 0; i < 1000000; i++) {
